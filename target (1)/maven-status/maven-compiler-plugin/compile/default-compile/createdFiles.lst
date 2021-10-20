@@ -1,0 +1,15 @@
+co\edu\usta\tunja\supermarket\persistence\entity\ProductTypeEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\ProviderEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\TaxPriceProductEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\TicketEntity.class
+co\edu\usta\tunja\supermarket\model\Emp.class
+co\edu\usta\tunja\supermarket\persistence\entity\PersonTypeEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\PersonEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\TicketDetailEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\TaxEntity.class
+co\edu\usta\tunja\supermarket\model\Dept.class
+co\edu\usta\tunja\supermarket\persistence\entity\PersonPersonTypeEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\ProductEntity.class
+co\edu\usta\tunja\supermarket\persistence\entity\ProductProviderEntity.class
+co\edu\usta\tunja\supermarket\App.class
+co\edu\usta\tunja\supermarket\persistence\entity\PriceProductEntity.class
