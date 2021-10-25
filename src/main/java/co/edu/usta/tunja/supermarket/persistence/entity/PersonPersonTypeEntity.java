@@ -1,10 +1,12 @@
 package co.edu.usta.tunja.supermarket.persistence.entity;
 
+import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "PERSON_PERSON_TYPE")
 public class PersonPersonTypeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_person_person_type")
@@ -12,10 +14,74 @@ public class PersonPersonTypeEntity {
 
     //... The other attributes...
     @ManyToOne
-    @JoinColumn(name = "fk_id_person", insertable = false, updatable = false ,nullable = false)
+    @JoinColumn(name = "fk_id_person", insertable = false, updatable = false, nullable = false)
     private PersonEntity personEntity;
 
     @ManyToOne
     @JoinColumn(name = "fk_id_person_type", insertable = false, updatable = false, nullable = false)
     private PersonTypeEntity personTypeEntity;
+
+    /* get and set*/
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public PersonEntity getPersonEntity() {
+        return personEntity;
+    }
+
+    public void setPersonEntity(PersonEntity personEntity) {
+        this.personEntity = personEntity;
+    }
+
+    public PersonTypeEntity getPersonTypeEntity() {
+        return personTypeEntity;
+    }
+
+    public void setPersonTypeEntity(PersonTypeEntity personTypeEntity) {
+        this.personTypeEntity = personTypeEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonPersonTypeEntity{" + "id=" + id + ", personEntity=" + personEntity + ", personTypeEntity=" + personTypeEntity + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + Objects.hashCode(this.id);
+        hash = 71 * hash + Objects.hashCode(this.personEntity);
+        hash = 71 * hash + Objects.hashCode(this.personTypeEntity);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final PersonPersonTypeEntity other = (PersonPersonTypeEntity) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.personEntity, other.personEntity)) {
+            return false;
+        }
+        if (!Objects.equals(this.personTypeEntity, other.personTypeEntity)) {
+            return false;
+        }
+        return true;
+    }
+
 }

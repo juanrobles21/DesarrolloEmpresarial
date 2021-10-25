@@ -6,6 +6,7 @@ import java.util.List;
 @Entity
 @Table(name = "PERSON_TYPE")
 public class PersonTypeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_person_type")
@@ -16,4 +17,35 @@ public class PersonTypeEntity {
 
     @OneToMany(mappedBy = "personTypeEntity")
     private List<PersonPersonTypeEntity> personPersonTypeEntityList;
+
+    /*get and set */
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getPersonTypeName() {
+        return personTypeName;
+    }
+
+    public void setPersonTypeName(String personTypeName) {
+        this.personTypeName = personTypeName;
+    }
+
+    public List<PersonPersonTypeEntity> getPersonPersonTypeEntityList() {
+        return personPersonTypeEntityList;
+    }
+
+    public void setPersonPersonTypeEntityList(List<PersonPersonTypeEntity> personPersonTypeEntityList) {
+        this.personPersonTypeEntityList = personPersonTypeEntityList;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonTypeEntity{" + "personTypeName=" + personTypeName + '}';
+    }
+
 }
