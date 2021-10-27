@@ -28,8 +28,7 @@ public class ProviderEntity {
     @Column(name = "phone_number", length = 45, nullable = false)
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "providerEntity")
-    private List<ProductProviderEntity> productProviderEntityList;
+   
 
     /*get and set*/
 
@@ -81,17 +80,13 @@ public class ProviderEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<ProductProviderEntity> getProductProviderEntityList() {
-        return productProviderEntityList;
-    }
+    
 
-    public void setProductProviderEntityList(List<ProductProviderEntity> productProviderEntityList) {
-        this.productProviderEntityList = productProviderEntityList;
-    }
+  
 
     @Override
     public String toString() {
-        return "ProviderEntity{" + "id=" + id + ", name=" + name + ", nit=" + nit + ", url=" + url + ", address=" + address + ", phoneNumber=" + phoneNumber + ", productProviderEntityList=" + productProviderEntityList + '}';
+        return "ProviderEntity{" + "id=" + id + ", name=" + name + ", nit=" + nit + ", url=" + url + ", address=" + address + ", phoneNumber=" + phoneNumber + ", productProviderEntityList=" +  + '}';
     }
 
     @Override
@@ -103,7 +98,7 @@ public class ProviderEntity {
         hash = 41 * hash + Objects.hashCode(this.url);
         hash = 41 * hash + Objects.hashCode(this.address);
         hash = 41 * hash + Objects.hashCode(this.phoneNumber);
-        hash = 41 * hash + Objects.hashCode(this.productProviderEntityList);
+        
         return hash;
     }
 
@@ -137,9 +132,7 @@ public class ProviderEntity {
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
-        if (!Objects.equals(this.productProviderEntityList, other.productProviderEntityList)) {
-            return false;
-        }
+        
         return true;
     }
 

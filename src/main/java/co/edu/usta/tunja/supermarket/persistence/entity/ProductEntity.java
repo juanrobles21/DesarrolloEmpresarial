@@ -21,8 +21,7 @@ public class ProductEntity {
     @JoinColumn(name = "fk_id_product_type", insertable = false, updatable = false, nullable = false)
     private ProductTypeEntity productTypeEntity;
 
-    @OneToMany(mappedBy = "productEntity")
-    private List<ProductProviderEntity> productProviderEntityList;
+    
 
     /*get and set*/
     public Integer getId() {
@@ -49,17 +48,11 @@ public class ProductEntity {
         this.productTypeEntity = productTypeEntity;
     }
 
-    public List<ProductProviderEntity> getProductProviderEntityList() {
-        return productProviderEntityList;
-    }
-
-    public void setProductProviderEntityList(List<ProductProviderEntity> productProviderEntityList) {
-        this.productProviderEntityList = productProviderEntityList;
-    }
+    
 
     @Override
     public String toString() {
-        return "ProductEntity{" + "id=" + id + ", productName=" + productName + ", productTypeEntity=" + productTypeEntity + ", productProviderEntityList=" + productProviderEntityList + '}';
+        return "ProductEntity{" + "id=" + id + ", productName=" + productName + ", productTypeEntity=" + productTypeEntity + ", productProviderEntityList=" +  + '}';
     }
 
     @Override
@@ -68,7 +61,7 @@ public class ProductEntity {
         hash = 67 * hash + Objects.hashCode(this.id);
         hash = 67 * hash + Objects.hashCode(this.productName);
         hash = 67 * hash + Objects.hashCode(this.productTypeEntity);
-        hash = 67 * hash + Objects.hashCode(this.productProviderEntityList);
+        
         return hash;
     }
 
@@ -93,9 +86,7 @@ public class ProductEntity {
         if (!Objects.equals(this.productTypeEntity, other.productTypeEntity)) {
             return false;
         }
-        if (!Objects.equals(this.productProviderEntityList, other.productProviderEntityList)) {
-            return false;
-        }
+       
         return true;
     }
 

@@ -22,10 +22,11 @@ public class TaxPriceProductEntity {
     @JoinColumn(name = "fk_id_tax", insertable = false, updatable = false, nullable = false)
     private TaxEntity taxEntity;
 
+    /*
     @OneToMany(mappedBy = "personEntityAdministrator")
     private List<TicketDetailEntity> ticketDetailEntityList;
-
-    /*get and set*/
+     */
+ /*get and set*/
     public Integer getId() {
         return id;
     }
@@ -50,6 +51,7 @@ public class TaxPriceProductEntity {
         this.taxEntity = taxEntity;
     }
 
+    /*
     public List<TicketDetailEntity> getTicketDetailEntityList() {
         return ticketDetailEntityList;
     }
@@ -57,10 +59,10 @@ public class TaxPriceProductEntity {
     public void setTicketDetailEntityList(List<TicketDetailEntity> ticketDetailEntityList) {
         this.ticketDetailEntityList = ticketDetailEntityList;
     }
-
+     */
     @Override
     public String toString() {
-        return "TaxPriceProductEntity{" + "id=" + id + ", priceProductEntity=" + priceProductEntity + ", taxEntity=" + taxEntity + ", ticketDetailEntityList=" + ticketDetailEntityList + '}';
+        return "TaxPriceProductEntity{" + "id=" + id + ", priceProductEntity=" + priceProductEntity + ", taxEntity=" + taxEntity + ", ticketDetailEntityList=" + + '}';
     }
 
     @Override
@@ -69,7 +71,7 @@ public class TaxPriceProductEntity {
         hash = 29 * hash + Objects.hashCode(this.id);
         hash = 29 * hash + Objects.hashCode(this.priceProductEntity);
         hash = 29 * hash + Objects.hashCode(this.taxEntity);
-        hash = 29 * hash + Objects.hashCode(this.ticketDetailEntityList);
+
         return hash;
     }
 
@@ -94,9 +96,11 @@ public class TaxPriceProductEntity {
         if (!Objects.equals(this.taxEntity, other.taxEntity)) {
             return false;
         }
+        /*
         if (!Objects.equals(this.ticketDetailEntityList, other.ticketDetailEntityList)) {
             return false;
         }
+         */
         return true;
     }
 

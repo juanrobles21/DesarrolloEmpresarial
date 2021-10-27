@@ -14,36 +14,27 @@ public class PersonEntity {
     private Integer id;
 
     @Column(name = "person_dni", length = 20, nullable = false)
-    private String personDni;
+    private String dni;
 
-    @Column(name = "person_name", length = 45, nullable = false)
-    private String personName;
+    @Column(name = "person_name", length = 25, nullable = false)
+    private String name;
 
     @Column(name = "person_last_name", length = 45, nullable = false)
-    private String personLastName;
+    private String lastName;
 
-    @Column(name = "person_phone", length = 45, nullable = true)
-    private String personPhone;
+    @Column(name = "person_phone", length = 45, nullable = false)
+    private String phone;
 
     @Column(name = "person_address", length = 45, nullable = false)
-    private String personAddress;
+    private String address;
 
-    @Column(name = "person_dni", length = 10, nullable = false)
-    private String personMail;
-
-    @OneToMany(mappedBy = "personEntity")
-    private List<PersonPersonTypeEntity> personPersonTypeEntityList;
-
-    @OneToMany(mappedBy = "personEntityClient")
-    private List<TicketEntity> ticketEntityClientList;
-
-    @OneToMany(mappedBy = "personEntityCashier")
-    private List<TicketEntity> ticketEntityCashierList;
-
-    @OneToMany(mappedBy = "personEntityAdministrator")
-    private List<TicketDetailEntity> ticketDetailEntityList;
-
-    /*Get and setter*/
+    /*
+    @OneToMany(mappedBy = "personCashierEntity")
+    private List<TicketEntity> ticketCashierEntityList;
+    
+    @OneToMany(mappedBy = "personCustomerEntity")
+    private List<TicketEntity> ticketCustomerEntityList;
+     */
     public Integer getId() {
         return id;
     }
@@ -52,105 +43,81 @@ public class PersonEntity {
         this.id = id;
     }
 
-    public String getPersonDni() {
-        return personDni;
+    public String getDni() {
+        return dni;
     }
 
-    public void setPersonDni(String personDni) {
-        this.personDni = personDni;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-    public String getPersonName() {
-        return personName;
+    public String getName() {
+        return name;
     }
 
-    public void setPersonName(String personName) {
-        this.personName = personName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPersonLastName() {
-        return personLastName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPersonLastName(String personLastName) {
-        this.personLastName = personLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPersonPhone() {
-        return personPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPersonPhone(String personPhone) {
-        this.personPhone = personPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getPersonAddress() {
-        return personAddress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPersonAddress(String personAddress) {
-        this.personAddress = personAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPersonMail() {
-        return personMail;
+    /*
+    public List<TicketEntity> getTicketCashierEntityList() {
+        return ticketCashierEntityList;
     }
 
-    public void setPersonMail(String personMail) {
-        this.personMail = personMail;
+    public void setTicketCashierEntityList(List<TicketEntity> ticketCashierEntityList) {
+        this.ticketCashierEntityList = ticketCashierEntityList;
     }
 
-    public List<PersonPersonTypeEntity> getPersonPersonTypeEntityList() {
-        return personPersonTypeEntityList;
+    public List<TicketEntity> getTicketCustomerEntityList() {
+        return ticketCustomerEntityList;
     }
 
-    public void setPersonPersonTypeEntityList(List<PersonPersonTypeEntity> personPersonTypeEntityList) {
-        this.personPersonTypeEntityList = personPersonTypeEntityList;
+    public void setTicketCustomerEntityList(List<TicketEntity> ticketCustomerEntityList) {
+        this.ticketCustomerEntityList = ticketCustomerEntityList;
     }
-
-    public List<TicketEntity> getTicketEntityClientList() {
-        return ticketEntityClientList;
-    }
-
-    public void setTicketEntityClientList(List<TicketEntity> ticketEntityClientList) {
-        this.ticketEntityClientList = ticketEntityClientList;
-    }
-
-    public List<TicketEntity> getTicketEntityCashierList() {
-        return ticketEntityCashierList;
-    }
-
-    public void setTicketEntityCashierList(List<TicketEntity> ticketEntityCashierList) {
-        this.ticketEntityCashierList = ticketEntityCashierList;
-    }
-
-    public List<TicketDetailEntity> getTicketDetailEntityList() {
-        return ticketDetailEntityList;
-    }
-
-    public void setTicketDetailEntityList(List<TicketDetailEntity> ticketDetailEntityList) {
-        this.ticketDetailEntityList = ticketDetailEntityList;
-    }
-
+     */
     @Override
     public String toString() {
-        return personDni + " " + personName;
+        return dni + " " + name;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.personDni);
-        hash = 79 * hash + Objects.hashCode(this.personName);
-        hash = 79 * hash + Objects.hashCode(this.personLastName);
-        hash = 79 * hash + Objects.hashCode(this.personPhone);
-        hash = 79 * hash + Objects.hashCode(this.personAddress);
-        hash = 79 * hash + Objects.hashCode(this.personMail);
-        hash = 79 * hash + Objects.hashCode(this.personPersonTypeEntityList);
-        hash = 79 * hash + Objects.hashCode(this.ticketEntityClientList);
-        hash = 79 * hash + Objects.hashCode(this.ticketEntityCashierList);
-        hash = 79 * hash + Objects.hashCode(this.ticketDetailEntityList);
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.id);
+        hash = 29 * hash + Objects.hashCode(this.dni);
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + Objects.hashCode(this.lastName);
+        hash = 29 * hash + Objects.hashCode(this.phone);
+        hash = 29 * hash + Objects.hashCode(this.address);
+        /*
+        hash = 29 * hash + Objects.hashCode(this.ticketCashierEntityList);
+        hash = 29 * hash + Objects.hashCode(this.ticketCustomerEntityList);
+         */
         return hash;
     }
 
@@ -166,39 +133,32 @@ public class PersonEntity {
             return false;
         }
         final PersonEntity other = (PersonEntity) obj;
-        if (!Objects.equals(this.personDni, other.personDni)) {
+        if (!Objects.equals(this.dni, other.dni)) {
             return false;
         }
-        if (!Objects.equals(this.personName, other.personName)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.personLastName, other.personLastName)) {
+        if (!Objects.equals(this.lastName, other.lastName)) {
             return false;
         }
-        if (!Objects.equals(this.personPhone, other.personPhone)) {
+        if (!Objects.equals(this.phone, other.phone)) {
             return false;
         }
-        if (!Objects.equals(this.personAddress, other.personAddress)) {
-            return false;
-        }
-        if (!Objects.equals(this.personMail, other.personMail)) {
+        if (!Objects.equals(this.address, other.address)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
-        if (!Objects.equals(this.personPersonTypeEntityList, other.personPersonTypeEntityList)) {
+        /*
+        if (!Objects.equals(this.ticketCashierEntityList, other.ticketCashierEntityList)) {
             return false;
         }
-        if (!Objects.equals(this.ticketEntityClientList, other.ticketEntityClientList)) {
+        if (!Objects.equals(this.ticketCustomerEntityList, other.ticketCustomerEntityList)) {
             return false;
         }
-        if (!Objects.equals(this.ticketEntityCashierList, other.ticketEntityCashierList)) {
-            return false;
-        }
-        if (!Objects.equals(this.ticketDetailEntityList, other.ticketDetailEntityList)) {
-            return false;
-        }
+         */
         return true;
     }
 
