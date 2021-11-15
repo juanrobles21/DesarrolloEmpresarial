@@ -48,11 +48,9 @@ public class ProductEntity {
         this.productTypeEntity = productTypeEntity;
     }
 
-    
-
     @Override
     public String toString() {
-        return "ProductEntity{" + "id=" + id + ", productName=" + productName + ", productTypeEntity=" + productTypeEntity + ", productProviderEntityList=" +  + '}';
+        return "ProductEntity{" + "productName=" + productName + '}';
     }
 
     @Override

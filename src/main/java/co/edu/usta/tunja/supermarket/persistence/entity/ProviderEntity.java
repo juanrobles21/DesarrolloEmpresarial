@@ -28,10 +28,7 @@ public class ProviderEntity {
     @Column(name = "phone_number", length = 45, nullable = false)
     private String phoneNumber;
 
-   
-
     /*get and set*/
-
     public Integer getId() {
         return id;
     }
@@ -80,13 +77,9 @@ public class ProviderEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    
-
-  
-
     @Override
     public String toString() {
-        return "ProviderEntity{" + "id=" + id + ", name=" + name + ", nit=" + nit + ", url=" + url + ", address=" + address + ", phoneNumber=" + phoneNumber + ", productProviderEntityList=" +  + '}';
+        return name + " " + nit;
     }
 
     @Override
@@ -98,41 +91,50 @@ public class ProviderEntity {
         hash = 41 * hash + Objects.hashCode(this.url);
         hash = 41 * hash + Objects.hashCode(this.address);
         hash = 41 * hash + Objects.hashCode(this.phoneNumber);
-        
+
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final ProviderEntity other = (ProviderEntity) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.name, other.name))
+        {
             return false;
         }
-        if (!Objects.equals(this.nit, other.nit)) {
+        if (!Objects.equals(this.nit, other.nit))
+        {
             return false;
         }
-        if (!Objects.equals(this.url, other.url)) {
+        if (!Objects.equals(this.url, other.url))
+        {
             return false;
         }
-        if (!Objects.equals(this.address, other.address)) {
+        if (!Objects.equals(this.address, other.address))
+        {
             return false;
         }
-        if (!Objects.equals(this.phoneNumber, other.phoneNumber)) {
+        if (!Objects.equals(this.phoneNumber, other.phoneNumber))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        
+
         return true;
     }
 

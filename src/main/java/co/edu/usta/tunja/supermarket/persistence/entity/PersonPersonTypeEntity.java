@@ -62,23 +62,29 @@ public class PersonPersonTypeEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final PersonPersonTypeEntity other = (PersonPersonTypeEntity) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.personEntity, other.personEntity)) {
+        if (!Objects.equals(this.personEntity, other.personEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.personTypeEntity, other.personTypeEntity)) {
+        if (!Objects.equals(this.personTypeEntity, other.personTypeEntity))
+        {
             return false;
         }
         return true;

@@ -27,7 +27,6 @@ public class TaxEntity {
     private List<TaxPriceProductEntity> taxPriceProductEntityList;
 
     /*get and set*/
-
     public Integer getId() {
         return id;
     }
@@ -70,7 +69,7 @@ public class TaxEntity {
 
     @Override
     public String toString() {
-        return "TaxEntity{" + "id=" + id + ", taxValue=" + taxValue + ", taxName=" + taxName + ", creationDate=" + creationDate + ", taxPriceProductEntityList=" + taxPriceProductEntityList + '}';
+        return taxValue + " " + taxName;
     }
 
     @Override
@@ -86,29 +85,37 @@ public class TaxEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final TaxEntity other = (TaxEntity) obj;
-        if (!Objects.equals(this.taxName, other.taxName)) {
+        if (!Objects.equals(this.taxName, other.taxName))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.taxValue, other.taxValue)) {
+        if (!Objects.equals(this.taxValue, other.taxValue))
+        {
             return false;
         }
-        if (!Objects.equals(this.creationDate, other.creationDate)) {
+        if (!Objects.equals(this.creationDate, other.creationDate))
+        {
             return false;
         }
-        if (!Objects.equals(this.taxPriceProductEntityList, other.taxPriceProductEntityList)) {
+        if (!Objects.equals(this.taxPriceProductEntityList, other.taxPriceProductEntityList))
+        {
             return false;
         }
         return true;

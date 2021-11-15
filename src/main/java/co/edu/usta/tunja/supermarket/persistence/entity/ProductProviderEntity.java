@@ -82,7 +82,7 @@ public class ProductProviderEntity {
 
     @Override
     public String toString() {
-        return "ProductProviderEntity{" + "id=" + id + ", barCode=" + barCode + ", stock=" + stock + ", productEntity=" + productEntity + ", providerEntity=" + providerEntity + ", priceProductEntityList=" + priceProductEntityList + '}';
+        return "ProductProviderEntity{" + "barCode=" + barCode + '}';
     }
 
     @Override
@@ -99,32 +99,41 @@ public class ProductProviderEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final ProductProviderEntity other = (ProductProviderEntity) obj;
-        if (!Objects.equals(this.barCode, other.barCode)) {
+        if (!Objects.equals(this.barCode, other.barCode))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.stock, other.stock)) {
+        if (!Objects.equals(this.stock, other.stock))
+        {
             return false;
         }
-        if (!Objects.equals(this.productEntity, other.productEntity)) {
+        if (!Objects.equals(this.productEntity, other.productEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.providerEntity, other.providerEntity)) {
+        if (!Objects.equals(this.providerEntity, other.providerEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.priceProductEntityList, other.priceProductEntityList)) {
+        if (!Objects.equals(this.priceProductEntityList, other.priceProductEntityList))
+        {
             return false;
         }
         return true;

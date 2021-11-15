@@ -16,12 +16,6 @@ public class TicketDetailEntity {
     @Column(name = "amount", nullable = false)
     private Integer amount;
 
-    @Column(name = "unit_value", length = 13, precision = 2, nullable = false)
-    private Float unitValue;
-
-    @Column(name = "address", length = 45, nullable = false)
-    private String address;
-
     @Column(name = "devolution_request", nullable = true)
     private Date devolutionRequest;
 
@@ -58,22 +52,6 @@ public class TicketDetailEntity {
 
     public void setAmount(Integer amount) {
         this.amount = amount;
-    }
-
-    public Float getUnitValue() {
-        return unitValue;
-    }
-
-    public void setUnitValue(Float unitValue) {
-        this.unitValue = unitValue;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public Date getDevolutionRequest() {
@@ -126,67 +104,76 @@ public class TicketDetailEntity {
 
     @Override
     public String toString() {
-        return "TicketDetailEntity{" + "id=" + id + ", amount=" + amount + ", unitValue=" + unitValue + ", address=" + address + ", devolutionRequest=" + devolutionRequest + ", devolutionApproved=" + devolutionApproved + ", description=" + description + ", ticketEntity=" + ticketEntity + ", taxPriceProductEntity=" + taxPriceProductEntity.getPriceProductEntity().getProductProviderEntity().getPriceProductEntityList() + ", personEntityAdministrator=" + personEntityAdministrator + '}';
+        String productName = taxPriceProductEntity.getPriceProductEntity().getProductProviderEntity().getProductEntity().getProductName();
+        Float price = taxPriceProductEntity.getPriceProductEntity().getSalePrice();
+        Float taxValue = taxPriceProductEntity.getTaxEntity().getTaxValue();
+        Float total = amount * (price * (1 + taxValue));
+        return "Nombre del producrto: " + productName
+                + "Cantidad: " + amount
+                + "Precio: " + price
+                + "Inpuesto: " + taxValue
+                + "Total: " + total;
     }
-
-    
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 71 * hash + Objects.hashCode(this.id);
-        hash = 71 * hash + Objects.hashCode(this.amount);
-        hash = 71 * hash + Objects.hashCode(this.unitValue);
-        hash = 71 * hash + Objects.hashCode(this.address);
-        hash = 71 * hash + Objects.hashCode(this.devolutionRequest);
-        hash = 71 * hash + Objects.hashCode(this.devolutionApproved);
-        hash = 71 * hash + Objects.hashCode(this.description);
-        hash = 71 * hash + Objects.hashCode(this.ticketEntity);
-        hash = 71 * hash + Objects.hashCode(this.taxPriceProductEntity);
-        hash = 71 * hash + Objects.hashCode(this.personEntityAdministrator);
+        int hash = 3;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        hash = 47 * hash + Objects.hashCode(this.amount);
+        hash = 47 * hash + Objects.hashCode(this.devolutionRequest);
+        hash = 47 * hash + Objects.hashCode(this.devolutionApproved);
+        hash = 47 * hash + Objects.hashCode(this.description);
+        hash = 47 * hash + Objects.hashCode(this.ticketEntity);
+        hash = 47 * hash + Objects.hashCode(this.taxPriceProductEntity);
+        hash = 47 * hash + Objects.hashCode(this.personEntityAdministrator);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final TicketDetailEntity other = (TicketDetailEntity) obj;
-        if (!Objects.equals(this.address, other.address)) {
+        if (!Objects.equals(this.description, other.description))
+        {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.amount, other.amount))
+        {
             return false;
         }
-        if (!Objects.equals(this.amount, other.amount)) {
+        if (!Objects.equals(this.devolutionRequest, other.devolutionRequest))
+        {
             return false;
         }
-        if (!Objects.equals(this.unitValue, other.unitValue)) {
+        if (!Objects.equals(this.devolutionApproved, other.devolutionApproved))
+        {
             return false;
         }
-        if (!Objects.equals(this.devolutionRequest, other.devolutionRequest)) {
+        if (!Objects.equals(this.ticketEntity, other.ticketEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.devolutionApproved, other.devolutionApproved)) {
+        if (!Objects.equals(this.taxPriceProductEntity, other.taxPriceProductEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.ticketEntity, other.ticketEntity)) {
-            return false;
-        }
-        if (!Objects.equals(this.taxPriceProductEntity, other.taxPriceProductEntity)) {
-            return false;
-        }
-        if (!Objects.equals(this.personEntityAdministrator, other.personEntityAdministrator)) {
+        if (!Objects.equals(this.personEntityAdministrator, other.personEntityAdministrator))
+        {
             return false;
         }
         return true;

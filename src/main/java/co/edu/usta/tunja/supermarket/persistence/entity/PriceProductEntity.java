@@ -123,38 +123,49 @@ public class PriceProductEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final PriceProductEntity other = (PriceProductEntity) obj;
-        if (!Objects.equals(this.userUpdate, other.userUpdate)) {
+        if (!Objects.equals(this.userUpdate, other.userUpdate))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.salePrice, other.salePrice)) {
+        if (!Objects.equals(this.salePrice, other.salePrice))
+        {
             return false;
         }
-        if (!Objects.equals(this.shopPrice, other.shopPrice)) {
+        if (!Objects.equals(this.shopPrice, other.shopPrice))
+        {
             return false;
         }
-        if (!Objects.equals(this.startDate, other.startDate)) {
+        if (!Objects.equals(this.startDate, other.startDate))
+        {
             return false;
         }
-        if (!Objects.equals(this.dateUpdate, other.dateUpdate)) {
+        if (!Objects.equals(this.dateUpdate, other.dateUpdate))
+        {
             return false;
         }
-        if (!Objects.equals(this.productProviderEntity, other.productProviderEntity)) {
+        if (!Objects.equals(this.productProviderEntity, other.productProviderEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.taxPriceProductEntityList, other.taxPriceProductEntityList)) {
+        if (!Objects.equals(this.taxPriceProductEntityList, other.taxPriceProductEntityList))
+        {
             return false;
         }
         return true;

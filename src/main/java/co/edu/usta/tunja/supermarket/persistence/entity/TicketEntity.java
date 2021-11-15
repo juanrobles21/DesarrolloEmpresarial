@@ -83,7 +83,11 @@ public class TicketEntity {
 
     @Override
     public String toString() {
-        return "TicketEntity{" + "id=" + id + ", paidValue=" + paidValue + ", ticketDate=" + ticketDate + ", personEntityCustomer=" + personEntityCustomer + ", personEntityCashier=" + personEntityCashier + ", ticketDetailEntityList=" + ticketDetailEntityList + '}';
+        String customerInfo = personEntityCustomer.getName() + " " + personEntityCustomer.getLastName() + " " + personEntityCustomer.getDni();
+        String cashierName = personEntityCashier.getName() + " " + personEntityCashier.getLastName();
+        return "Date= " + ticketDate
+                + "Cashier Info= " + cashierName
+                + "Customer Info= " + customerInfo;
     }
 
     @Override
@@ -100,32 +104,41 @@ public class TicketEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final TicketEntity other = (TicketEntity) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.paidValue, other.paidValue)) {
+        if (!Objects.equals(this.paidValue, other.paidValue))
+        {
             return false;
         }
-        if (!Objects.equals(this.ticketDate, other.ticketDate)) {
+        if (!Objects.equals(this.ticketDate, other.ticketDate))
+        {
             return false;
         }
-        if (!Objects.equals(this.personEntityCustomer, other.personEntityCustomer)) {
+        if (!Objects.equals(this.personEntityCustomer, other.personEntityCustomer))
+        {
             return false;
         }
-        if (!Objects.equals(this.personEntityCashier, other.personEntityCashier)) {
+        if (!Objects.equals(this.personEntityCashier, other.personEntityCashier))
+        {
             return false;
         }
-        if (!Objects.equals(this.ticketDetailEntityList, other.ticketDetailEntityList)) {
+        if (!Objects.equals(this.ticketDetailEntityList, other.ticketDetailEntityList))
+        {
             return false;
         }
         return true;

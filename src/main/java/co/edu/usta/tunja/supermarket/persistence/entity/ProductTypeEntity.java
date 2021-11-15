@@ -46,7 +46,7 @@ public class ProductTypeEntity {
 
     @Override
     public String toString() {
-        return "ProductTypeEntity{" + "id=" + id + ", productTypeName=" + productTypeName + ", productEntityList=" + productEntityList + '}';
+        return  productTypeName;
     }
 
     @Override
@@ -60,23 +60,29 @@ public class ProductTypeEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final ProductTypeEntity other = (ProductTypeEntity) obj;
-        if (!Objects.equals(this.productTypeName, other.productTypeName)) {
+        if (!Objects.equals(this.productTypeName, other.productTypeName))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.productEntityList, other.productEntityList)) {
+        if (!Objects.equals(this.productEntityList, other.productEntityList))
+        {
             return false;
         }
         return true;

@@ -102,7 +102,7 @@ public class PersonEntity {
      */
     @Override
     public String toString() {
-        return dni + " " + name;
+        return dni + ' ' + name;
     }
 
     @Override
@@ -123,32 +123,41 @@ public class PersonEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final PersonEntity other = (PersonEntity) obj;
-        if (!Objects.equals(this.dni, other.dni)) {
+        if (!Objects.equals(this.dni, other.dni))
+        {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.name, other.name))
+        {
             return false;
         }
-        if (!Objects.equals(this.lastName, other.lastName)) {
+        if (!Objects.equals(this.lastName, other.lastName))
+        {
             return false;
         }
-        if (!Objects.equals(this.phone, other.phone)) {
+        if (!Objects.equals(this.phone, other.phone))
+        {
             return false;
         }
-        if (!Objects.equals(this.address, other.address)) {
+        if (!Objects.equals(this.address, other.address))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
         /*
