@@ -22,7 +22,7 @@ public class TicketDetailEntity {
     @Column(name = "devolution_approved", nullable = true)
     private Date devolutionApproved;
 
-    @Column(name = "description", length = 45, nullable = true)
+    @Column(name = "description_devolution", length = 45, nullable = true)
     private String description;
 
     @ManyToOne
@@ -108,12 +108,14 @@ public class TicketDetailEntity {
         Float price = taxPriceProductEntity.getPriceProductEntity().getSalePrice();
         Float taxValue = taxPriceProductEntity.getTaxEntity().getTaxValue();
         Float total = amount * (price * (1 + taxValue));
-        return "Nombre del producrto: " + productName
+        return ""+total;
+        /*return "Nombre del producrto: " + productName
                 + "Cantidad: " + amount
                 + "Precio: " + price
                 + "Inpuesto: " + taxValue
                 + "Total: " + total;
-    }
+*/    
+}
 
     @Override
     public int hashCode() {

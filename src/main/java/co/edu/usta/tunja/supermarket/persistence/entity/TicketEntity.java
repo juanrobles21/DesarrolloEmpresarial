@@ -14,7 +14,7 @@ public class TicketEntity {
     @Column(name = "id_ticket")
     private Integer id;
 
-    @Column(name = "paid_value", length = 13, precision = 2, nullable = true)
+    @Column(name = "half_payment", length = 13, precision = 2, nullable = true)
     private Float paidValue;
 
     @Column(name = "ticket_date", nullable = false)
