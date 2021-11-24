@@ -13,6 +13,12 @@ public class TaxPriceProductEntity {
     @Column(name = "id_tax_price_product")
     private Integer id;
 
+    @Column(name = "fk_id_price_product")
+    private Integer fkIdPriceProduct;
+
+    @Column(name = "fk_id_tax")
+    private Integer fkIdTax;
+
     //... The other attributes...
     @ManyToOne
     @JoinColumn(name = "fk_id_price_product", insertable = false, updatable = false, nullable = false)
@@ -60,9 +66,25 @@ public class TaxPriceProductEntity {
         this.ticketDetailEntityList = ticketDetailEntityList;
     }
      */
+    public Integer getFkIdPriceProduct() {
+        return fkIdPriceProduct;
+    }
+
+    public void setFkIdPriceProduct(Integer fkIdPriceProduct) {
+        this.fkIdPriceProduct = fkIdPriceProduct;
+    }
+
+    public Integer getFkIdTax() {
+        return fkIdTax;
+    }
+
+    public void setFkIdTax(Integer fkIdTax) {
+        this.fkIdTax = fkIdTax;
+    }
+
     @Override
     public String toString() {
-        return "TaxPriceProductEntity{" + "id=" + id + ", priceProductEntity=" + priceProductEntity + ", taxEntity=" + taxEntity + ", ticketDetailEntityList=" + + '}';
+        return "TaxPriceProductEntity{" + "id=" + id + ", priceProductEntity=" + priceProductEntity + ", taxEntity=" + taxEntity + ", ticketDetailEntityList=" + +'}';
     }
 
     @Override
@@ -77,23 +99,29 @@ public class TaxPriceProductEntity {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final TaxPriceProductEntity other = (TaxPriceProductEntity) obj;
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.priceProductEntity, other.priceProductEntity)) {
+        if (!Objects.equals(this.priceProductEntity, other.priceProductEntity))
+        {
             return false;
         }
-        if (!Objects.equals(this.taxEntity, other.taxEntity)) {
+        if (!Objects.equals(this.taxEntity, other.taxEntity))
+        {
             return false;
         }
         /*

@@ -20,6 +20,11 @@ public class TicketEntity {
     @Column(name = "ticket_date", nullable = false)
     private Date ticketDate;
 
+    @Column(name = "fk_id_person_customer")
+    private Integer fkIdPersonCustomer;
+
+    @Column(name = "fk_id_person_cashier")
+    private Integer fkIdPersonCashier;
     //... The other attributes ...
     @ManyToOne
     @JoinColumn(name = "fk_id_person_customer", insertable = false, updatable = false, nullable = false)
@@ -80,6 +85,23 @@ public class TicketEntity {
     public void setTicketDetailEntityList(List<TicketDetailEntity> ticketDetailEntityList) {
         this.ticketDetailEntityList = ticketDetailEntityList;
     }
+
+    public Integer getFkIdPersonCustomer() {
+        return fkIdPersonCustomer;
+    }
+
+    public void setFkIdPersonCustomer(Integer fkIdPersonCustomer) {
+        this.fkIdPersonCustomer = fkIdPersonCustomer;
+    }
+
+    public Integer getFkIdPersonCashier() {
+        return fkIdPersonCashier;
+    }
+
+    public void setFkIdPersonCashier(Integer fkIdPersonCashier) {
+        this.fkIdPersonCashier = fkIdPersonCashier;
+    }
+    
 
     @Override
     public String toString() {

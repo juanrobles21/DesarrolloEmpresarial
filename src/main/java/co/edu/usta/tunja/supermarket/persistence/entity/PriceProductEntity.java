@@ -29,6 +29,9 @@ public class PriceProductEntity {
     @Column(name = "date_update", nullable = false)
     private Date dateUpdate;
 
+    @Column(name = "fk_id_product_provider")
+    private Integer fkIdProductProvider;
+
     //..The other attributess....
     @ManyToOne
     @JoinColumn(name = "fk_id_product_provider", insertable = false, updatable = false, nullable = false)
@@ -100,6 +103,14 @@ public class PriceProductEntity {
 
     public void setTaxPriceProductEntityList(List<TaxPriceProductEntity> taxPriceProductEntityList) {
         this.taxPriceProductEntityList = taxPriceProductEntityList;
+    }
+
+    public Integer getFkIdProductProvider() {
+        return fkIdProductProvider;
+    }
+
+    public void setFkIdProductProvider(Integer fkIdProductProvider) {
+        this.fkIdProductProvider = fkIdProductProvider;
     }
 
     @Override

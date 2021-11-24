@@ -19,6 +19,12 @@ public class ProductProviderEntity {
     @Column(name = "stock", nullable = false)
     private Integer stock;
 
+    @Column(name = "fk_id_product")
+    private Integer fkIdProduct;
+
+    @Column(name = "fk_id_provider")
+    private Integer fkIdProvider;
+
     //... The other attributes...
     @ManyToOne
     @JoinColumn(name = "fk_id_product", insertable = false, updatable = false, nullable = false)
@@ -79,6 +85,24 @@ public class ProductProviderEntity {
     public void setPriceProductEntityList(List<PriceProductEntity> priceProductEntityList) {
         this.priceProductEntityList = priceProductEntityList;
     }
+
+    public Integer getFkIdProduct() {
+        return fkIdProduct;
+    }
+
+    public void setFkIdProduct(Integer fkIdProduct) {
+        this.fkIdProduct = fkIdProduct;
+    }
+
+    public Integer getFkIdProvider() {
+        return fkIdProvider;
+    }
+
+    public void setFkIdProvider(Integer fkIdProvider) {
+        this.fkIdProvider = fkIdProvider;
+    }
+
+   
 
     @Override
     public String toString() {

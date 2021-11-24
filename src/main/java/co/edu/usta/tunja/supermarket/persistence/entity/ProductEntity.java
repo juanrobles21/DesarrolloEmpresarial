@@ -16,12 +16,13 @@ public class ProductEntity {
     @Column(name = "product_name", length = 45, nullable = false)
     private String productName;
 
+    @Column(name = "fk_id_product_type")
+    private Integer fkIdProductType;
+
     //... The other attributes...
     @ManyToOne
     @JoinColumn(name = "fk_id_product_type", insertable = false, updatable = false, nullable = false)
     private ProductTypeEntity productTypeEntity;
-
-    
 
     /*get and set*/
     public Integer getId() {
@@ -48,6 +49,14 @@ public class ProductEntity {
         this.productTypeEntity = productTypeEntity;
     }
 
+    public Integer getFkIdProductType() {
+        return fkIdProductType;
+    }
+
+    public void setFkIdProductType(Integer fkIdProductType) {
+        this.fkIdProductType = fkIdProductType;
+    }
+
     @Override
     public String toString() {
         return "ProductEntity{" + "productName=" + productName + '}';
@@ -59,32 +68,38 @@ public class ProductEntity {
         hash = 67 * hash + Objects.hashCode(this.id);
         hash = 67 * hash + Objects.hashCode(this.productName);
         hash = 67 * hash + Objects.hashCode(this.productTypeEntity);
-        
+
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final ProductEntity other = (ProductEntity) obj;
-        if (!Objects.equals(this.productName, other.productName)) {
+        if (!Objects.equals(this.productName, other.productName))
+        {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (!Objects.equals(this.id, other.id))
+        {
             return false;
         }
-        if (!Objects.equals(this.productTypeEntity, other.productTypeEntity)) {
+        if (!Objects.equals(this.productTypeEntity, other.productTypeEntity))
+        {
             return false;
         }
-       
+
         return true;
     }
 

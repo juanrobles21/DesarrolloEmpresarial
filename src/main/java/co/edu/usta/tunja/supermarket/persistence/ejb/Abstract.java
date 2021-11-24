@@ -26,20 +26,27 @@ public abstract class Abstract<T> {
         this.entidad = entidad;
 
     }
+
     public void grabar(T entidad) {
         getAdmEntidad().persist(entidad);
     }
 
     public void borrar(T entidad) {
+        if (!getAdmEntidad().contains(entidad))
+        {
+            entidad = getAdmEntidad().merge(entidad);
+        }
         getAdmEntidad().remove(entidad);
     }
 
     public void actualizar(T entidad) {
         getAdmEntidad().merge(entidad);
     }
-    public T buscar(Object id){
-       return getAdmEntidad().find(entidad, id);
+
+    public T buscar(Object id) {
+        return getAdmEntidad().find(entidad, id);
     }
+
     public List<T> listar() {
         CriteriaBuilder cb = getAdmEntidad().getCriteriaBuilder();
         CriteriaQuery<T> cq = cb.createQuery(entidad);

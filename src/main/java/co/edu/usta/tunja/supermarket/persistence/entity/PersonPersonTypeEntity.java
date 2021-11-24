@@ -12,6 +12,12 @@ public class PersonPersonTypeEntity {
     @Column(name = "id_person_person_type")
     private Integer id;
 
+    @Column(name = "fk_id_person_type")
+    private Integer fkIdPersonType;
+
+    @Column(name = "fk_id_person")
+    private Integer fkIdPerson;
+
     //... The other attributes...
     @ManyToOne
     @JoinColumn(name = "fk_id_person", insertable = false, updatable = false, nullable = false)
@@ -44,6 +50,22 @@ public class PersonPersonTypeEntity {
 
     public void setPersonTypeEntity(PersonTypeEntity personTypeEntity) {
         this.personTypeEntity = personTypeEntity;
+    }
+
+    public Integer getFkIdPersonType() {
+        return fkIdPersonType;
+    }
+
+    public void setFkIdPersonType(Integer fkIdPersonType) {
+        this.fkIdPersonType = fkIdPersonType;
+    }
+
+    public Integer getFkIdPerson() {
+        return fkIdPerson;
+    }
+
+    public void setFkIdPerson(Integer fkIdPerson) {
+        this.fkIdPerson = fkIdPerson;
     }
 
     @Override

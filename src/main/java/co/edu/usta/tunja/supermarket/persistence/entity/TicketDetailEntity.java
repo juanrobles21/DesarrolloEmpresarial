@@ -22,6 +22,15 @@ public class TicketDetailEntity {
     @Column(name = "devolution_approved", nullable = true)
     private Date devolutionApproved;
 
+    @Column(name = "fk_id_ticket")
+    private Integer fkIdTicket;
+
+    @Column(name = "fk_id_tax_price_product")
+    private Integer fkIdTaxPriceProduct;
+
+    @Column(name = "fk_id_person_administrator")
+    private Integer fkIdPersonAdministrator;
+
     @Column(name = "description_devolution", length = 45, nullable = true)
     private String description;
 
@@ -102,20 +111,44 @@ public class TicketDetailEntity {
         this.personEntityAdministrator = personEntityAdministrator;
     }
 
+    public Integer getFkIdTicket() {
+        return fkIdTicket;
+    }
+
+    public void setFkIdTicket(Integer fkIdTicket) {
+        this.fkIdTicket = fkIdTicket;
+    }
+
+    public Integer getFkIdTaxPriceProduct() {
+        return fkIdTaxPriceProduct;
+    }
+
+    public void setFkIdTaxPriceProduct(Integer fkIdTaxPriceProduct) {
+        this.fkIdTaxPriceProduct = fkIdTaxPriceProduct;
+    }
+
+    public Integer getFkIdPersonAdministrator() {
+        return fkIdPersonAdministrator;
+    }
+
+    public void setFkIdPersonAdministrator(Integer fkIdPersonAdministrator) {
+        this.fkIdPersonAdministrator = fkIdPersonAdministrator;
+    }
+
     @Override
     public String toString() {
         String productName = taxPriceProductEntity.getPriceProductEntity().getProductProviderEntity().getProductEntity().getProductName();
         Float price = taxPriceProductEntity.getPriceProductEntity().getSalePrice();
         Float taxValue = taxPriceProductEntity.getTaxEntity().getTaxValue();
         Float total = amount * (price * (1 + taxValue));
-        return ""+total;
+        return "" + total;
         /*return "Nombre del producrto: " + productName
                 + "Cantidad: " + amount
                 + "Precio: " + price
                 + "Inpuesto: " + taxValue
                 + "Total: " + total;
-*/    
-}
+         */
+    }
 
     @Override
     public int hashCode() {
